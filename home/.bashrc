@@ -1,1 +1,0 @@
-/home/kebil/.homesick/repos/dotfiles/home/.homesick/repos/dotfiles/home/.bashrc
