@@ -1,0 +1,1 @@
+/home/kebil/git/dotfiles/bash/kenny.bashrc
