@@ -29,8 +29,9 @@ filetype plugin indent on    " required Vundle
 
 " vim-airline options
 let g:airline_powerline_fonts = 1 " it's sooo biutiful!
-let g:airline_theme='hybrid'
+"let g:airline_theme='hybrid'
 let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#branch#enabled = 1
 
 " ultisnips config
 let g:UltiSnipsExpandTrigger="<tab>"

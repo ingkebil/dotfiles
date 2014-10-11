@@ -28,10 +28,10 @@ shopt -s histappend                      # append history entries..
 set -o vi
 export EDITOR=vim
 
-
+# paths
 export PATH=$PWD/ensembl-git-tools/bin:$PATH
 export RLWRAP_EDITOR="vim +%L"
 
-
+# https://github.com/andsens/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick='source $HOME/.homesick/repos/homeshick/bin/homeshick.sh'
