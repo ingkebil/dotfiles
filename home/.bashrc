@@ -32,6 +32,9 @@ export EDITOR=vim
 export PATH=$PWD/ensembl-git-tools/bin:$PATH
 export RLWRAP_EDITOR="vim +%L"
 
+# prompt
+source "$HOME/.bash_prompt"
+
 # https://github.com/andsens/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick='source $HOME/.homesick/repos/homeshick/bin/homeshick.sh'
