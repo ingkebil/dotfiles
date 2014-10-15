@@ -22,6 +22,7 @@ Plugin 'ervandew/supertab'
 Plugin 'vim-scripts/ZoomWin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'chrisbra/csv.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required Vundle
@@ -106,16 +107,7 @@ set fileencodings=ucs-bom,utf-8,prc
 
 syntax on
 filetype indent on
-"filetype plugin on
-"filetype plugin indent on
 
-"colorscheme peachpuff
-"colorscheme desert
-"colorscheme torte
-"colorscheme darkblue
-colorscheme wombat256
-"colorscheme xoria256
-"
 " turn off the background so I can see my transparent background seeping through
 hi Normal ctermbg=none
 " make sure the folds are not so noticeable
