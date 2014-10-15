@@ -23,6 +23,7 @@ Plugin 'vim-scripts/ZoomWin'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'chrisbra/csv.vim'
+Plugin 'flazz/vim-colorschemes'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required Vundle

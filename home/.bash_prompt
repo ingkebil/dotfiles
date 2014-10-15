@@ -156,7 +156,7 @@ __powerline_mod() {
 
   ps1() {
     # Check the exit code of the previous command and display different
-    # colors in the prompt accordingly. 
+    # colors in the prompt accordingly.
     if [ $? -eq 0 ]; then
       local FG_EXIT="$FG_GREEN"
     else
