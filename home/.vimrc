@@ -39,6 +39,7 @@ let g:airline#extensions#branch#enabled = 1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:ultisnips_python_style="google"
 
 " ctrlp options
 let g:ctrlp_map = '<c-l>'
@@ -65,7 +66,7 @@ set shiftround
 set filetype=unix,dos,mac
 "set t_AB=[48;5;%dm " we control the background
 "set t_AF=[38;5;%dm " we control the foreground
-"set t_Co=256 " explicitely say it's a 256 color xterm TIP 1312
+set t_Co=256 " explicitely say it's a 256 color xterm TIP 1312
 set ls=2 " Always show status line
 set backup " make backup file
 set bdir=/home/kebil/tmp,/tmp " where to put backup file
