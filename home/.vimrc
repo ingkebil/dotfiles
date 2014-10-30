@@ -152,7 +152,7 @@ au BufNewFile,BufRead *.ctp setfiletype php
 au BufNewFile,BufRead *.py setfiletype python
 "au FileType python compiler python " Use python compiler for all *.pl and *.pm files.
 au FileType python set foldmethod=indent
-au FileType python nmap <F5> :!python2 <C-R>=expand("%:p")<CR>
+au FileType python nmap <F5> :!python <C-R>=expand("%:p")<CR>
 au FileType python set makeprg=python2\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 au FileType python set errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 "au FileType python set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
