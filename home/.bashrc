@@ -18,6 +18,9 @@ shopt -s hostcomplete
 alias ls='ls --color=auto'
 alias ll='ls -l'
 
+# UTF8
+export LANG="en_US.UTF-8"
+
 # HISTORY #
 export HISTCONTROL=ignoredups:erasedups  # avoid duplicates..
 export HISTSIZE=100000                   # big big history
@@ -34,6 +37,7 @@ export RLWRAP_EDITOR="vim +%L"
 
 # prompt
 source "$HOME/.bash_prompt"
+#source "$HOME/.git-completion.bash"
 
 # https://github.com/andsens/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
