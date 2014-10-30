@@ -154,6 +154,14 @@ __powerline_mod() {
       fi
   }
 
+  git_tracking() {
+      if [[ `alias | grep git | wc -l` -ne 0 ]]; then
+          printf "$BG_BLACK$FG_WHITE@$RESET"
+      else
+          printf "$BG_BLACK $RESET"
+      fi
+  }
+
   ps1() {
     # Check the exit code of the previous command and display different
     # colors in the prompt accordingly.
@@ -169,6 +177,7 @@ __powerline_mod() {
     # Add the Conda environment infor
     PS1="$BG_BLACK$FG_MAGENTA$(conda_env_info)$RESET"
     PS1+="$(jobs_info)"
+    PS1+="$(git_tracking)"
     PS1+="$BG_BLACK$FG_RED$(root_info)\u$RESET"
     PS1+="$BG_BLACK$FG_YELLOW$PROMPT_HOSTNAME$RESET"
     # Add path to current working directory
