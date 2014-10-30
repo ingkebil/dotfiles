@@ -1,0 +1,174 @@
+achievements --help
+Date: Thu Oct 30 15:14:59 CET 2014
+config --global achievement.upload true
+Date: Thu Oct 30 15:15:17 CET 2014
+achievements --help
+Date: Thu Oct 30 15:15:18 CET 2014
+status
+Date: Thu Oct 30 15:18:45 CET 2014
+--version
+Date: Thu Oct 30 15:19:20 CET 2014
+log
+Date: Thu Oct 30 15:30:42 CET 2014
+rebase -i 1644dae2208948b54b81cff93f7f60588909ef75
+Date: Thu Oct 30 15:31:21 CET 2014
+commit -a --amend --no-edit
+Date: Thu Oct 30 15:32:15 CET 2014
+rebase --continue
+Date: Thu Oct 30 15:32:23 CET 2014
+status
+Date: Thu Oct 30 15:32:27 CET 2014
+log
+Date: Thu Oct 30 15:32:32 CET 2014
+push
+Date: Thu Oct 30 15:34:21 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:44:46 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:44:46 CET 2014
+branch -v
+Date: Thu Oct 30 15:44:46 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:46:46 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:46:46 CET 2014
+branch -v
+Date: Thu Oct 30 15:46:46 CET 2014
+status
+Date: Thu Oct 30 15:46:51 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:46:51 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:46:51 CET 2014
+branch -v
+Date: Thu Oct 30 15:46:51 CET 2014
+log master..HEAD
+Date: Thu Oct 30 15:47:35 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:47:35 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:47:35 CET 2014
+branch -v
+Date: Thu Oct 30 15:47:35 CET 2014
+rebase master
+Date: Thu Oct 30 15:47:45 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:47:45 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:47:45 CET 2014
+branch -v
+Date: Thu Oct 30 15:47:45 CET 2014
+checkout master
+Date: Thu Oct 30 15:47:52 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:47:52 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:47:52 CET 2014
+branch -v
+Date: Thu Oct 30 15:47:52 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:47:54 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:47:54 CET 2014
+branch -v
+Date: Thu Oct 30 15:47:54 CET 2014
+merge reduce_nodes_dynanically
+Date: Thu Oct 30 15:48:10 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:48:10 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:48:10 CET 2014
+branch -v
+Date: Thu Oct 30 15:48:10 CET 2014
+status
+Date: Thu Oct 30 15:48:24 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:48:24 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:48:24 CET 2014
+branch -v
+Date: Thu Oct 30 15:48:24 CET 2014
+push
+Date: Thu Oct 30 15:48:35 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:48:45 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:48:45 CET 2014
+branch -v
+Date: Thu Oct 30 15:48:45 CET 2014
+--version
+Date: Thu Oct 30 15:51:49 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:51:49 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:51:49 CET 2014
+branch -v
+Date: Thu Oct 30 15:51:49 CET 2014
+config --global credential.helper cache --timeout 90000
+Date: Thu Oct 30 15:52:39 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:52:39 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:52:39 CET 2014
+branch -v
+Date: Thu Oct 30 15:52:39 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 15:55:16 CET 2014
+status --porcelain
+Date: Thu Oct 30 15:55:16 CET 2014
+branch -v
+Date: Thu Oct 30 15:55:16 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 16:08:29 CET 2014
+status --porcelain
+Date: Thu Oct 30 16:08:30 CET 2014
+branch -v
+Date: Thu Oct 30 16:08:30 CET 2014
+achievements -l
+Date: Thu Oct 30 16:08:38 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 16:08:38 CET 2014
+status --porcelain
+Date: Thu Oct 30 16:08:38 CET 2014
+branch -v
+Date: Thu Oct 30 16:08:38 CET 2014
+pull
+Date: Thu Oct 30 16:08:58 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 16:08:58 CET 2014
+status --porcelain
+Date: Thu Oct 30 16:08:58 CET 2014
+branch -v
+Date: Thu Oct 30 16:08:58 CET 2014
+status
+Date: Thu Oct 30 16:09:03 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 16:09:03 CET 2014
+status --porcelain
+Date: Thu Oct 30 16:09:03 CET 2014
+branch -v
+Date: Thu Oct 30 16:09:03 CET 2014
+achievements -l
+Date: Thu Oct 30 16:09:10 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 16:09:10 CET 2014
+status --porcelain
+Date: Thu Oct 30 16:09:10 CET 2014
+branch -v
+Date: Thu Oct 30 16:09:10 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:39:23 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:39:23 CET 2014
+branch -v
+Date: Thu Oct 30 20:39:23 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:39:52 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:39:52 CET 2014
+branch -v
+Date: Thu Oct 30 20:39:52 CET 2014
+achievements --help
+Date: Thu Oct 30 20:47:37 CET 2014
+achievements -l
+Date: Thu Oct 30 20:47:43 CET 2014
