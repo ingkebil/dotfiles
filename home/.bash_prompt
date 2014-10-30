@@ -115,7 +115,7 @@ __powerline_mod() {
   # | Determine info on possible Git repositories.
   # +--------------------------------------------------------------------+
   git_info() {
-    [ -x "$(which git)" ] || return    # no git command found
+    # [ -x "$(which git)" ] || return    # no git command found
 
     # get current branch name or short SHA1 hash for detached head
     local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)"

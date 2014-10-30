@@ -172,3 +172,53 @@ achievements --help
 Date: Thu Oct 30 20:47:37 CET 2014
 achievements -l
 Date: Thu Oct 30 20:47:43 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:56:20 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:56:20 CET 2014
+branch -v
+Date: Thu Oct 30 20:56:20 CET 2014
+status
+Date: Thu Oct 30 20:56:28 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:56:28 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:56:28 CET 2014
+branch -v
+Date: Thu Oct 30 20:56:28 CET 2014
+diff .bash_prompt
+Date: Thu Oct 30 20:56:33 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:56:33 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:56:33 CET 2014
+branch -v
+Date: Thu Oct 30 20:56:33 CET 2014
+diff
+Date: Thu Oct 30 20:58:01 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:58:01 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:58:01 CET 2014
+branch -v
+Date: Thu Oct 30 20:58:01 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:58:03 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:58:04 CET 2014
+branch -v
+Date: Thu Oct 30 20:58:04 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:58:04 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:58:04 CET 2014
+branch -v
+Date: Thu Oct 30 20:58:04 CET 2014
+status
+Date: Thu Oct 30 20:58:06 CET 2014
+symbolic-ref --short HEAD
+Date: Thu Oct 30 20:58:06 CET 2014
+status --porcelain
+Date: Thu Oct 30 20:58:06 CET 2014
+branch -v
+Date: Thu Oct 30 20:58:06 CET 2014
