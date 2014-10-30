@@ -38,3 +38,7 @@ source "$HOME/.bash_prompt"
 # https://github.com/andsens/homeshick
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 alias homeshick='source $HOME/.homesick/repos/homeshick/bin/homeshick.sh'
+
+# https://github.com/ingkebil/git-achievements
+export PATH="$PATH:~/git/git-achievements"
+alias git="git-achievements"
