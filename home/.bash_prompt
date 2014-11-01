@@ -115,7 +115,7 @@ __powerline_mod() {
   # | Determine info on possible Git repositories.
   # +--------------------------------------------------------------------+
   git_info() {
-    # [ -x "$(which git)" ] || return    # no git command found
+    [ -x "$(which git)" ] || return    # no git command found
 
     # get current branch name or short SHA1 hash for detached head
     local branch="$(git symbolic-ref --short HEAD 2>/dev/null || git rev-parse --short HEAD 2>/dev/null)"
@@ -154,14 +154,6 @@ __powerline_mod() {
       fi
   }
 
-  git_tracking() {
-      if [[ `alias | grep git | wc -l` -ne 0 ]]; then
-          printf "$BG_BLACK$FG_WHITE@$RESET"
-      else
-          printf "$BG_BLACK $RESET"
-      fi
-  }
-
   ps1() {
     # Check the exit code of the previous command and display different
     # colors in the prompt accordingly.
@@ -177,7 +169,6 @@ __powerline_mod() {
     # Add the Conda environment infor
     PS1="$BG_BLACK$FG_MAGENTA$(conda_env_info)$RESET"
     PS1+="$(jobs_info)"
-    PS1+="$(git_tracking)"
     PS1+="$BG_BLACK$FG_RED$(root_info)\u$RESET"
     PS1+="$BG_BLACK$FG_YELLOW$PROMPT_HOSTNAME$RESET"
     # Add path to current working directory
