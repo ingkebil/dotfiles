@@ -43,5 +43,5 @@ source "$HOME/.bash_prompt"
 source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 
 # https://github.com/ingkebil/git-achievements
-export PATH="$PATH:~/git/git-achievements"
+export PATH="$PATH:$HOME/git/git-achievements"
 alias g="git-achievements"

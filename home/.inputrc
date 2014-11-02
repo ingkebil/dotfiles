@@ -1,8 +1,8 @@
 # words which have more than one possible completion cause the matches to be listed immediately
-set show-all-if-ambiguous on
+#set show-all-if-ambiguous on
 
 # Use tab to cycle through all the possible completions.
-TAB:menu-complete
+#TAB:menu-complete
 
 # vi vi vi
 set editing-mode vi
