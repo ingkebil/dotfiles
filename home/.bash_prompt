@@ -154,6 +154,14 @@ __powerline_mod() {
       fi
   }
 
+  virtual_env() {
+    if [ -z "$VIRTUAL_ENV_DISABLE_PROMPT" ] ; then
+      if [[ -n $VIRTUAL_ENV ]]; then
+        printf "$FG_WHITE(`basename $VIRTUAL_ENV`)$RESET"
+      fi
+    fi
+  }
+
   ps1() {
     # Check the exit code of the previous command and display different
     # colors in the prompt accordingly.
@@ -173,6 +181,7 @@ __powerline_mod() {
     PS1+="$BG_BLACK$FG_YELLOW$PROMPT_HOSTNAME$RESET"
     # Add path to current working directory
     PS1+="$BG_BLACK$FG_CYAN \w $RESET"
+    PS1+="$BG_BLACK$(virtual_env)$RESET"
     PS1+="$BG_BLACK$FG_BLUE$(git_info)$RESET\n"
     PS1+="$BG_BLACK$FG_EXIT $PS_SYMBOL $RESET "
   }
