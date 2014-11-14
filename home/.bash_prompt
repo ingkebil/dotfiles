@@ -164,20 +164,20 @@ __powerline_mod() {
   }
 
   short_cwd() {
-    cwd=$(pwd)
+    local CWD=$(pwd)
+    local CWD_HOME=${CWD#$HOME}
 
-    cwd_home=${cwd#$HOME}
-    if [[ x"$cwd" != x"$cwd_home" ]]; then
-        printf "~";
-        cwd=$cwd_home
+    if [[ x"$CWD" != x"$CWD_HOME" ]]; then
+        echo -n "~"
+        CWD=$CWD_HOME
     fi 
-    if [[ $cwd == "/" ]]; then echo -n "/"; fi 
+    if [[ $CWD == "/" ]]; then echo -n "/"; fi 
 
-    for l in $(echo $cwd | tr "/" "\n"); do 
-      printf "/"
-      printf ${l:0:1}
+    for l in $(echo $CWD | tr "/" "\n"); do 
+      echo -n "/"
+      echo -n ${l:0:1}
     done
-    printf ${l:1}
+    echo -n ${l:1}
   }
 
   ps1() {

@@ -45,3 +45,7 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 # https://github.com/ingkebil/git-achievements
 export PATH="$PATH:$HOME/git/git-achievements"
 alias g="git-achievements"
+
+# virtualenvwrapper
+export WORKON_HOME=~/git
+source /usr/bin/virtualenvwrapper.sh
