@@ -17,6 +17,7 @@ shopt -s hostcomplete
 # aliases
 alias ls='ls --color=auto'
 alias ll='ls -l'
+alias tmux='tmux -2'
 
 # UTF8
 export LANG="en_US.UTF-8"
