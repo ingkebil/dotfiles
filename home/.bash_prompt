@@ -173,10 +173,12 @@ __powerline_mod() {
     fi 
     if [[ $CWD == "/" ]]; then echo -n "/"; fi 
 
-    for l in $(echo $CWD | tr "/" "\n"); do 
+    TMP_IFS=$IFS
+    IFS=$'\n'; for l in $(echo $CWD | tr "/" "\n"); do 
       echo -n "/"
       echo -n ${l:0:1}
     done
+    IFS=$TMP_IFS
     echo -n ${l:1}
   }
 
