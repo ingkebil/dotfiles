@@ -38,6 +38,6 @@ set output-meta on
 set convert-meta off
 
 # fix the history search: type + press ^R will use what you typed already
-"^R": history-search-backward
+"\C-R": history-search-backward
 "\e[A": history-search-backward
 "\e[B": history-search-forward
