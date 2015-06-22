@@ -50,3 +50,6 @@ alias g="git-achievements"
 # virtualenvwrapper
 export WORKON_HOME=~/git
 source /usr/bin/virtualenvwrapper.sh
+
+# added by Miniconda 3.10.1 installer
+export PATH="/home/kenny.billiau/miniconda/bin:$PATH"
