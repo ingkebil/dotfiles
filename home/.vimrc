@@ -24,6 +24,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
 Plugin 'chrisbra/csv.vim'
 Plugin 'flazz/vim-colorschemes'
+Plugin 'robertmeta/nofrils'
 Plugin 'wakatime/vim-wakatime'
 
 " All of your Plugins must be added before the following line
@@ -50,8 +51,6 @@ nnoremap <F8> :GundoToggle<CR>
 set undofile
 set undolevels=100
 set undodir=/home/kebil/.vim/tmp/undo/
-
-
 
 set number
 set guioptions=afgimrT
@@ -163,49 +162,6 @@ au FileType python set errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,
 au FileType php map K :call OpenPhpFunction('<c-r><c-w>')<cr>
 au FileType php :EnableFastPHPFolds
 
-function! PHPsynCHK()
-    let winnum =winnr() " get current window number
-    silent make -l %
-    cw " open the error window if it contains error
-    " return to the window with cursor set on the line of the first error (if any)
-    execute winnum . "wincmd w"
-endfunction
-
-au FileType php setl makeprg=php
-au FileType php set errorformat=%m\ in\ %f\ on\ line\ %l
-
-" Map <CTRL>-B to check the file for syntax
-noremap <C-B> :call PHPsynCHK()<CR>
-
-
-" have some more advanced grepping ( http://vim.sourceforge.net/tip_view.php?tip_id=123 )
-" search for a word in files in the same dir as this file
-map gr : grep <cword> %:p:h/*<cr>
-" search for an independant word in the current dir
-map gR : grep \b<cword>\b *<cr>
-" search for an independant word in the same dir as this file
-map GR : grep \b<cword>\b %:p:h/*<cr>
-
-
-" Wraps visual selection in an HTML tag
-vmap <Leader>t <ESC>:call VisualHTMLTagWrap()<CR>
-
-function! VisualHTMLTagWrap()
-    let a:tag = input( "Tag to wrap block: ")
-    let a:jumpright = 2 + len( a:tag )
-    normal `<
-    let a:init_line = line( "." )
-    exe "normal i<".a:tag.">"
-    normal `>
-    let a:end_line = line( "." )
-    " Don't jump if we're on a new line
-    if( a:init_line == a:end_line )
-" Jump right to compensate for the characters we've added
-exe "normal ".a:jumpright."l"
-    endif
-    exe "normal a</".a:tag.">"
-endfunction
-
 fun! OpenPhpFunction (keyword)
     let proc_keyword = substitute(a:keyword , '_', '-', 'g')
     exe 'split'
@@ -223,43 +179,6 @@ fun! OpenPhpFunctionFF (keyword)
     exe 'firefox --remote "openurl(http://www.php.net/manual/en/print/function.'.proc_keyword.'.php,new-tab)"'
 endfun
 
-"function! PerlDoc()
-"  normal yy
-"  let l:this = @
-"  if match(l:this, '^ *\(use\|require\) ') >= 0
-"    exe ':new'
-"    exe ':resize'
-"    let l:this = substitute(l:this, '^ *\(use\|require\) *', "", "")
-"    let l:this = substitute(l:this, ";.*", "", "")
-"    let l:this = substitute(l:this, " .*", "", "")
-"    exe ':0r!perldoc -t ' . l:this
-"    exe ':0'
-"    return
-"  endif
-"  normal yiw
-"  exe ':new'
-"  exe ':resize'
-"  exe ':0r!perldoc -t -f ' . @
-"  exe ':0'
-"endfunction
-"
-"fun! PerlModuleSource()
-"    normal yy
-"    let l:this = @
-"    let l:this = substitute(l:this, '^ *\(use\|require\) *', "", "")
-"    let l:this = substitute(l:this, ";.*", "", "")
-"    let l:this = substitute(l:this, " .*", "", "")
-"    exe ':new'
-"    exe ':resize'
-"    exe ':0r!perldoc -m ' . @
-"    exe ':0'
-"endfun
-"
-""Display docs for built-in functions when cursor is on function name
-""or for modules when cursor is on 'use' or 'require' line.
-"au FileType perl map K :call PerlDoc()<CR>:set nomod<CR>:set filetype=man<CR>:echo "perldoc"<CR>
-"au FileType perl map <leader>K :call PerlModuleSource()<CR>:set nomod<CR>:set filetype=perl<CR>
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " http://amix.dk/vim/vimrc.html
 " Parenthesis/bracket expanding
@@ -285,31 +204,3 @@ if has("autocmd")
   " Upon entering a buffer, set or restore the number of undo levels
   au BufEnter * if getfsize(expand("<afile>")) < g:BufSizeThreshold | let &undolevels=g:SaveUndoLevels | hi Cursor term=reverse ctermbg=black guibg=black | else | set undolevels=-1 | hi Cursor term=underline ctermbg=red guibg=red | endif
 endif
-
-function! HTMLEncode()
-perl << EOF
- use HTML::Entities;
- @pos = $curwin->Cursor();
- $line = $curbuf->Get($pos[0]);
- $encvalue = encode_entities($line);
- $curbuf->Set($pos[0],$encvalue)
-EOF
-endfunction
-
-function! HTMLDecode()
-perl << EOF
- use HTML::Entities;
- @pos = $curwin->Cursor();
- $line = $curbuf->Get($pos[0]);
- $encvalue = decode_entities($line);
- $curbuf->Set($pos[0],$encvalue)
-EOF
-endfunction
-
-"""" PHP option
-au FileType php,html map <Leader>h :call HTMLEncode()<CR>
-au FileType php,html map <Leader>H :call HTMLDecode()<CR>
-
-"""" get a task list
-map <leader>T <Plug>TaskList
-
