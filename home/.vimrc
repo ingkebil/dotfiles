@@ -46,6 +46,12 @@ let g:ultisnips_python_style="google"
 " ctrlp options
 let g:ctrlp_map = '<c-l>'
 
+" syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+
 " gundo options
 nnoremap <F8> :GundoToggle<CR>
 set undofile
@@ -63,7 +69,6 @@ set shiftwidth=4
 set softtabstop=4
 set expandtab
 set shiftround
-set filetype=unix,dos,mac
 "set t_AB=[48;5;%dm " we control the background
 "set t_AF=[38;5;%dm " we control the foreground
 set t_Co=256 " explicitely say it's a 256 color xterm TIP 1312
@@ -116,7 +121,6 @@ hi Normal ctermbg=none
 "hi Folded ctermbg=black ctermfg=grey
 hi Folded ctermbg=none ctermfg=grey
 
-
 " the starting char for alt commands
 let mapleader = ","
 " let loaded_matchparen=1
@@ -130,24 +134,7 @@ map <C-P> :bp!<CR>
 
 " ,e will open in the current working directory
 map <Leader>e :e <C-R>=expand("%:p:h") . "/" <CR>
-
-"""" perl options
-au BufNewFile,BufRead *.t setfiletype perl
-au BufNewFile,BufRead *.p? setfiletype perl
-au FileType perl set iskeyword+=: " make completion perl friendly
-au FileType perl compiler perl " Use perl compiler for all *.pl and *.pm files.
-let perl_fold=1 " fold all perl
-" http://vim.wikia.com/wiki/Perldoc_function_and_module_keyboard_mappings
-au FileType perl noremap K :!echo <cword> <bar> perl -e '$line = <STDIN>; if ($line =~ /(\w+::\w+)/){exec("perldoc $1")} elsif($line =~ /(\w+)/){exec "perldoc -f $1 <bar><bar> perldoc $1"}'<cr><cr>
-au FileType perl map <F5> :!perl -MVi::QuickFix <C-R>=expand("%:p")<CR>
-au FileType perl map <S-F5> :copen<CR>:cf<CR>
-au FileType perl map <F4> :!prove <C-R>=expand("%:p")<CR>
-au FileType perl map <S-F4> :!prove -r<CR>
-
-"""" syntax hilighting for cake template files
-au BufNewFile,BufRead *.thtml setfiletype php
-au BufNewFile,BufRead *.ctp setfiletype php
-
+"
 """" python options
 au BufNewFile,BufRead *.py setfiletype python
 "au FileType python compiler python " Use python compiler for all *.pl and *.pm files.
@@ -156,28 +143,6 @@ au FileType python nmap <F5> :!python <C-R>=expand("%:p")<CR>
 au FileType python set makeprg=python2\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 au FileType python set errorformat=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 "au FileType python set efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-
-
-"""" php options
-au FileType php map K :call OpenPhpFunction('<c-r><c-w>')<cr>
-au FileType php :EnableFastPHPFolds
-
-fun! OpenPhpFunction (keyword)
-    let proc_keyword = substitute(a:keyword , '_', '-', 'g')
-    exe 'split'
-    exe 'enew'
-    exe "set buftype=nofile"
-    exe 'silent r!links -dump http://www.php.net/manual/en/print/function.'.proc_keyword.'.php'
-    exe 'norm gg'
-    exe 'call search ("' . a:keyword .'")'
-    exe 'norm dgg'
-    exe 'call search("User Contributed Notes")'
-    exe 'norm dGgg'
-endfun
-fun! OpenPhpFunctionFF (keyword)
-    let proc_keyword = substitute(a:keyword , '_', '-', 'g')
-    exe 'firefox --remote "openurl(http://www.php.net/manual/en/print/function.'.proc_keyword.'.php,new-tab)"'
-endfun
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " http://amix.dk/vim/vimrc.html
@@ -188,19 +153,3 @@ inoremap <Leader>( ()<esc>:let leavechar=")"<cr>i
 inoremap <Leader>[ []<esc>:let leavechar="]"<cr>i
 inoremap <Leader>{ {<esc>o}<esc>:let leavechar="}"<cr>O
 inoremap <Leader>} {}<esc>:let leavechar="}"<cr>i
-
-imap <m-l> <esc>:exec "normal f" . leavechar<cr>a
-imap <d-l> <esc>:exec "normal f" . leavechar<cr>a
-
-"let g:snippetsEmu_key = "<C-Tab>"
-
-let g:SaveUndoLevels = &undolevels
-let g:BufSizeThreshold = 1000000
-if has("autocmd")
-  " Store preferred undo levels
-  au VimEnter * let g:SaveUndoLevels = &undolevels
-  " Don't use a swap file for big files
-  au BufReadPre * if getfsize(expand("<afile>")) >= g:BufSizeThreshold | setlocal noswapfile | endif
-  " Upon entering a buffer, set or restore the number of undo levels
-  au BufEnter * if getfsize(expand("<afile>")) < g:BufSizeThreshold | let &undolevels=g:SaveUndoLevels | hi Cursor term=reverse ctermbg=black guibg=black | else | set undolevels=-1 | hi Cursor term=underline ctermbg=red guibg=red | endif
-endif
