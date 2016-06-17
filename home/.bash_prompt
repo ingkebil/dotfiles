@@ -87,7 +87,7 @@ __powerline_mod() {
     # Test if Conda env variable is set
     if [ -n "$CONDA_DEFAULT_ENV" ] ; then
       # This means we have an active Conda environment!
-      local conda_env=" ${ANACONDA_SYMBOL} ${CONDA_DEFAULT_ENV} "
+      local conda_env=" ${ANACONDA_SYMBOL} (${CONDA_DEFAULT_ENV}) "
     else
       # This means Conda environments are inactive (or non-existant)
       local conda_env=""
@@ -149,16 +149,16 @@ __powerline_mod() {
   jobs_info() {
       JOBS=$(jobs | wc -l)
       if [[ $JOBS > 0 ]]; then
-          printf "$BG_BLACK$FG_CYAN$JOBS_SYMBOL$RESET"
+          printf "$FG_CYAN$JOBS_SYMBOL$RESET"
       else
-          printf "$BG_BLACK  $RESET"
+          printf "  $RESET"
       fi
   }
 
   virtual_env() {
     if [[ -z "$VIRTUAL_ENV_DISABLE_PROMPT" ]] ; then
       if [[ -n $VIRTUAL_ENV ]]; then
-        printf "$FG_DARKGREY(`basename $VIRTUAL_ENV`)$RESET"
+        printf "($FG_DARKGREY(`basename $VIRTUAL_ENV`)$RESET)"
       fi
     fi
   }
@@ -195,15 +195,15 @@ __powerline_mod() {
     PROMPT_HOSTNAME="${HOSTNAME%%.*}"
 
     # Add the Conda environment infor
-    PS1="$BG_BLACK$FG_MAGENTA$(conda_env_info)$RESET"
+    PS1="$FG_MAGENTA$(conda_env_info)$RESET"
+    PS1+="$(virtual_env)$RESET"
     PS1+="$(jobs_info)"
-    PS1+="$BG_BLACK$FG_RED$(root_info)$RESET"
-    PS1+="$BG_BLACK$FG_YELLOW$PROMPT_HOSTNAME$RESET:"
+    PS1+="$FG_RED$(root_info)$RESET"
+    PS1+="$FG_YELLOW$PROMPT_HOSTNAME$RESET:"
     # Add path to current working directory
-    PS1+="$BG_BLACK$FG_CYAN$(short_cwd) $RESET"
-    PS1+="$BG_BLACK$(virtual_env)$RESET"
-    PS1+="$BG_BLACK$FG_BLUE$(git_info)$RESET\n"
-    PS1+="$BG_BLACK$FG_EXIT $PS_SYMBOL $RESET "
+    PS1+="$FG_CYAN$(short_cwd) $RESET"
+    PS1+="$FG_BLUE$(git_info)$RESET\n"
+    PS1+="$FG_EXIT $PS_SYMBOL $RESET "
   }
 
   # Tell bash to execute this function just before displaying its prompt.

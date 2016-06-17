@@ -18,6 +18,7 @@ shopt -s hostcomplete
 alias ls='ls --color=auto'
 alias ll='ls -l'
 alias tmux='tmux -2'
+alias v=vim
 
 # UTF8
 export LANG="en_US.UTF-8"
@@ -47,9 +48,6 @@ source "$HOME/.homesick/repos/homeshick/homeshick.sh"
 export PATH="$PATH:$HOME/git/git-achievements"
 alias g="git-achievements"
 
-# virtualenvwrapper
-export WORKON_HOME=~/git
-source /usr/bin/virtualenvwrapper.sh
-
 # added by Miniconda 3.10.1 installer
 export PATH="/home/kenny.billiau/miniconda/bin:$PATH"
+export PATH=$HOME/perl-5.18.2/:$PATH

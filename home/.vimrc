@@ -15,7 +15,7 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'scrooloose/syntastic'
 
 " Snippets are separated from ultisnips
-Plugin 'SirVer/ultisnips'
+Plugin 'SirVer/ultisnips, {'v': 'de70b1e'}
 Plugin 'honza/vim-snippets'
 
 Plugin 'ervandew/supertab'
